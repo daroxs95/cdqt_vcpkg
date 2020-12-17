@@ -71,5 +71,6 @@ if (UNIX)  # All Unix relative configs
 endif (UNIX)
 
 if (WIN32)       # All Windows relative configs
-  target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_lib jsoncpp_object Eigen3::Eigen)
+  #target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_lib jsoncpp_object Eigen3::Eigen)
+  target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_object jsoncpp_static Eigen3::Eigen)
 endif (WIN32)
