@@ -68,6 +68,7 @@ jobs:
         git clone https://github.com/microsoft/vcpkg
         cd vcpkg
         bootstrap-vcpkg.bat
+        vcpkg install json-cpp
 
     - name: Install Qt
       uses: jurplel/install-qt-action@v2
