@@ -12,18 +12,17 @@ jobs:
     # well on Windows or Mac.  You can convert this to a matrix build if you need
     # cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: Restore artifacts, or run vcpkg, build and cache artifacts
-      uses: lukka/run-vcpkg@v6
-      id: runvcpkg
-      with:
-        vcpkgTriplet: 'x64-windows'
-        #vcpkgDirectory: '${{ runner.workspace }}/b/vcpkg'
-        #vcpkgGitCommitId: '${{ matrix.vcpkgCommitId }}'
+    - name: Create vcpkg Environment
+      #working-directory: /home/runner/work/electricidad_cuba_cordova/electricidad_cuba_cordova
+      run: |
+        git clone https://github.com/microsoft/vcpkg/releases/tag/2020.11
+        cd vcpkg
+        ./bootstrap-vcpkg.sh
 
     - name: Create Build Environment
       # Some projects don't allow in-source building, so create a separate build directory
@@ -102,7 +101,7 @@ jobs:
         with:
           cmakeGenerator: 'Ninja'  
           cmakeListsOrSettingsJson: 'CMakeListsTxtBasic'
-          cmakeListsTxtPath: '${{ github.workspace }}/cmakeliststxt/CMakeLists.txt'
+          cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           useVcpkgToolchainFile: true
           buildWithCMakeArgs: '-- -v'
           buildDirectory: '${{ runner.workspace }}/b/ninja/'
@@ -112,7 +111,7 @@ jobs:
         with:
           cmakeGenerator: 'Ninja'  
           cmakeListsOrSettingsJson: 'CMakeListsTxtBasic'
-          cmakeListsTxtPath: '${{ github.workspace }}/cmakeliststxt/CMakeLists.txt'
+          cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
           useVcpkgToolchainFile: true
           buildWithCMakeArgs: '-- -v'
           vcpkgTriplet: ${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_TRIPLET_OUT }}
