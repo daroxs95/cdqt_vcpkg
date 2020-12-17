@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+        host: 'windows'
+        target: 'desktop'
+        install-deps: 'true'
+        cached: 'false'
+        setup-python: 'false'
 
     - name: Create vcpkg Environment
       #working-directory: /home/runner/work/electricidad_cuba_cordova/electricidad_cuba_cordova
@@ -28,6 +38,7 @@ jobs:
         # compute its hash and append this to the computed cache's key.
         appendedCacheKey: ${{ hashFiles( '**/vcpkg.json' ) }}
         vcpkgTriplet: 'x64-linux'
+        
     - name: Run CMake to install the dependencies with vcpkg.json manifest and build the project
       uses: lukka/run-cmake@v3
       with:

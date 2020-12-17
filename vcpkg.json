@@ -2,7 +2,6 @@
   "name": "cdqt",
   "version-string": "0.1.0",
   "dependencies": [
-    "jsoncpp",
-    "qt5-base"
+    "jsoncpp"
   ]
 }
