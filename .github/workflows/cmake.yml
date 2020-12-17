@@ -20,7 +20,7 @@ jobs:
     - name: Create vcpkg Environment
       #working-directory: /home/runner/work/electricidad_cuba_cordova/electricidad_cuba_cordova
       run: |
-        git clone https://github.com/microsoft/vcpkg/releases/tag/2020.11
+        git clone https://github.com/microsoft/vcpkg
         cd vcpkg
         ./bootstrap-vcpkg.sh
 
