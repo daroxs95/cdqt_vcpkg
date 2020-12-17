@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 3.5)
 
+SET(CMAKE_TOOLCHAIN_FILE "./vcpkg/scripts/buildsystems/vcpkg.cmake")
+
 ### Project Name
 project (CheckDoseQt LANGUAGES CXX)
 
@@ -17,8 +19,6 @@ set (CMAKE_CXX_STANDARD 11)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-SET(CMAKE_TOOLCHAIN_FILE "./vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 find_package (Qt5 COMPONENTS Widgets Core REQUIRED)
 find_package (Qt5 COMPONENTS Widgets Core REQUIRED)
