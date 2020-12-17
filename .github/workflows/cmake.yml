@@ -10,6 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+
     - name: Create vcpkg Environment
       #working-directory: /home/runner/work/electricidad_cuba_cordova/electricidad_cuba_cordova
       run: |
