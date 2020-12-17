@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CheckDoseQt</class>
+ <widget class="QMainWindow" name="CheckDoseQt">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CheckDoseQt v1.2b</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="TabBeam">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="tabBeamSummary">
+           <attribute name="title">
+            <string>Beam Summary</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="QTextEdit" name="textEdit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="sizeIncrement">
+                 <size>
+                  <width>1</width>
+                  <height>1</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="cursor" stdset="0">
+                 <cursorShape>IBeamCursor</cursorShape>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabBeamTable">
+           <attribute name="title">
+            <string>Beam Table</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QSplitter" name="splitter_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="handleWidth">
+                   <number>20</number>
+                  </property>
+                  <property name="childrenCollapsible">
+                   <bool>true</bool>
+                  </property>
+                  <widget class="QSplitter" name="splitter_3">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <widget class="QLabel" name="numberFileds_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Number of Fields:</string>
+                    </property>
+                   </widget>
+                   <widget class="QSpinBox" name="numberOfFields">
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="minimum">
+                     <number>1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>9</number>
+                    </property>
+                    <property name="value">
+                     <number>1</number>
+                    </property>
+                   </widget>
+                  </widget>
+                  <widget class="QSplitter" name="splitter_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <widget class="QLabel" name="treatmMach_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Treatment Machine:</string>
+                    </property>
+                   </widget>
+                   <widget class="QComboBox" name="treatmentMach">
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="maxCount">
+                     <number>3</number>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>1220</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>2950</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>5735</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </widget>
+                  <widget class="QSplitter" name="splitter">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <widget class="QLabel" name="globalE_label">
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Global Energy:</string>
+                    </property>
+                   </widget>
+                   <widget class="QComboBox" name="globalEnergy">
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="statusTip">
+                     <string comment="Select Energy" extracomment="6 MeV or 15 MeV photons"/>
+                    </property>
+                    <property name="maxCount">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>6MeV</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>15MeV</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </widget>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="beamSummaryTable">
+                <property name="font">
+                 <font>
+                  <family>Noto Sans</family>
+                  <pointsize>12</pointsize>
+                  <stylestrategy>PreferAntialias</stylestrategy>
+                 </font>
+                </property>
+                <property name="showGrid">
+                 <bool>false</bool>
+                </property>
+                <attribute name="horizontalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <row>
+                 <property name="text">
+                  <string>Beam Number</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Treat. Mach.</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Energy (MeV)</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>DFS (cm)</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Sum(X1/X2)</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Sum(Y1/Y2)</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Depth (cm)</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>U.M.</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Prec. Dose</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Diff (%)</string>
+                 </property>
+                </row>
+                <column>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </column>
+                <item row="0" column="0">
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="1" column="0">
+                 <property name="text">
+                  <string>1220</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+                <item row="2" column="0">
+                 <property name="text">
+                  <string>6MeV</string>
+                 </property>
+                 <property name="textAlignment">
+                  <set>AlignCenter</set>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="calculateButton">
+          <property name="maximumSize">
+           <size>
+            <width>255</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Calculate</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>771</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a RTP plan</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save current file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>numberOfFields</tabstop>
+  <tabstop>treatmentMach</tabstop>
+  <tabstop>globalEnergy</tabstop>
+  <tabstop>beamSummaryTable</tabstop>
+  <tabstop>TabBeam</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

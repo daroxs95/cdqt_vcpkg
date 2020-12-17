@@ -1,0 +1,11 @@
+{
+	"name" : "Precise1220",
+	"id" : "1220",
+	"energies" : 
+				{"6MeV" : 0.98,
+				"15MeV" : 0.97},
+	"dpto" : "RTP @ INOR",
+	"responsible" : "Michael Rodriguez",
+	"sad" : 90,
+	"d_r" : 10
+} 
