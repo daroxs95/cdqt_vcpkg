@@ -16,7 +16,7 @@ jobs:
       uses: jurplel/install-qt-action@v2
       with:
         version: '5.15.2'
-        host: 'windows'
+        #host: 'windows'
         target: 'desktop'
         install-deps: 'true'
         cached: 'false'
@@ -38,7 +38,7 @@ jobs:
         # compute its hash and append this to the computed cache's key.
         appendedCacheKey: ${{ hashFiles( '**/vcpkg.json' ) }}
         vcpkgTriplet: 'x64-linux'
-        
+
     - name: Run CMake to install the dependencies with vcpkg.json manifest and build the project
       uses: lukka/run-cmake@v3
       with:
