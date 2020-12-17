@@ -38,6 +38,7 @@ jobs:
         # compute its hash and append this to the computed cache's key.
         appendedCacheKey: ${{ hashFiles( '**/vcpkg.json' ) }}
         vcpkgTriplet: 'x64-linux'
+        vcpkgGitCommitId: 0bf3923f9fab4001c00f0f429682a0853b5749e0
 
     - name: Run CMake to install the dependencies with vcpkg.json manifest and build the project
       uses: lukka/run-cmake@v3
