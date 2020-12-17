@@ -65,4 +65,11 @@ execute_process(COMMAND cmake -E echo "-- Machines.rar extracted to ${PROJECT_BI
 ### Target include dirs and libs
 target_include_directories (CheckDoseQt PRIVATE ${EIGEN3_DIR} ${JSON_DIR})
 
-target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_object jsoncpp_static Eigen3::Eigen)
+### Declare some vars according to the host OS
+if (UNIX)  # All Unix relative configs
+  target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_object jsoncpp_static Eigen3::Eigen)
+endif (UNIX)
+
+if (WIN32)       # All Windows relative configs
+  target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_lib jsoncpp_object Eigen3::Eigen)
+endif (WIN32)
