@@ -23,6 +23,8 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package (Qt5 COMPONENTS Widgets Core REQUIRED)
 find_package (Qt5 COMPONENTS Widgets Core REQUIRED)
 find_package (jsoncpp CONFIG REQUIRED)
+find_package (Eigen3 CONFIG REQUIRED)
+
 
 ### Add needed files for compilation
 add_executable (CheckDoseQt
@@ -63,4 +65,4 @@ execute_process(COMMAND cmake -E echo "-- Machines.rar extracted to ${PROJECT_BI
 ### Target include dirs and libs
 target_include_directories (CheckDoseQt PRIVATE ${EIGEN3_DIR} ${JSON_DIR})
 
-target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_object jsoncpp_static)
+target_link_libraries (CheckDoseQt PRIVATE Qt5::Widgets Qt5::Core jsoncpp_object jsoncpp_static Eigen3::Eigen)
